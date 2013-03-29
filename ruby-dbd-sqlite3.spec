@@ -28,10 +28,10 @@ rm -rf $RPM_BUILD_ROOT
 ruby setup.rb install \
 	--prefix=$RPM_BUILD_ROOT
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
 %defattr(644,root,root,755)
 %{ruby_rubylibdir}/dbd/sqlite3
 %{ruby_rubylibdir}/dbd/SQLite3.rb
-
-%clean
-rm -rf $RPM_BUILD_ROOT
